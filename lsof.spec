@@ -5,8 +5,6 @@ Version:	4.60
 Release:	1
 License:	Free
 Group:		Applications/System
-Group(de):	Applikationen/System
-Group(pl):	Aplikacje/System
 Vendor:		Vic Abell <abe@purdue.edu>
 Source0:	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}_W.tar.gz
 Patch0:		%{name}-linux-ipv6mapped.patch
