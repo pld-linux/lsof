@@ -52,9 +52,9 @@ tar xf %{name}_%{version}.tar
 %build
 cd %{name}_%{version}
 
+LSOF_CC="%{__cc}"; export LSOF_CC
 ./Configure -n linux
 %{__make} \
-	LSOF_CC="%{__cc}" \
 	DEBUG="%{rpmcflags}"
 
 %install
