@@ -5,12 +5,12 @@ Summary(pt_BR):	Lista os arquivos abertos pelos processos que estЦo rodando
 Summary(ru):	Показывает открытые процессами файлы
 Summary(uk):	Показу╓ в╕дкрит╕ процесами файли
 Name:		lsof
-Version:	4.60
-Release:	2
+Version:	4.64
+Release:	1
 License:	Free
 Group:		Applications/System
 Vendor:		Vic Abell <abe@purdue.edu>
-Source0:	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}_W.tar.gz
+Source0:	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}.tar.gz
 Patch0:		%{name}-linux-ipv6mapped.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -45,12 +45,13 @@ Lsof - це скорочення в╕д LiSt Open Files. Саме це програма lsof ╕
 робить - виводить ╕нформац╕ю про файли, в╕дкрит╕ працюючими процесами.
 
 %prep
-%setup -c -q -n %{name}
-tar xf %{name}_%{version}.tar
+%setup -c -q
+cd %{name}_%{version}
+tar xf %{name}_%{version}_src.tar
 #%patch -p1
 
 %build
-cd %{name}_%{version}
+cd %{name}_%{version}/%{name}_%{version}_src
 
 LSOF_CC="%{__cc}"; export LSOF_CC
 ./Configure -n linux
@@ -61,19 +62,16 @@ LSOF_CC="%{__cc}"; export LSOF_CC
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
 
-cd %{name}_%{version}
+cd %{name}_%{version}/%{name}_%{version}_src
 
 install lsof $RPM_BUILD_ROOT%{_sbindir}
 install lsof.8 $RPM_BUILD_ROOT%{_mandir}/man8
-
-gzip -9nf 00*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{name}_%{version}/00*
-
+%doc %{name}_%{version}/{00*,README.*,RELEASE*} %{name}_%{version}/%{name}_%{version}_src/00*
 %attr(755,root,root) %{_sbindir}/lsof
 %{_mandir}/man8/*
