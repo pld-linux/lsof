@@ -1,8 +1,8 @@
 Summary:	Lists files open by processes
 Summary(pl):	Program do ¶ledzenia wszystkich procesów w systemie
 Name:		lsof
-Version:	4.49
-Release:	2
+Version:	4.50
+Release:	1
 Copyright:	Free
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
