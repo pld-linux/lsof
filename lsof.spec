@@ -5,13 +5,13 @@ Summary(pt_BR):	Lista os arquivos abertos pelos processos que estЦo rodando
 Summary(ru):	Показывает открытые процессами файлы
 Summary(uk):	Показу╓ в╕дкрит╕ процесами файли
 Name:		lsof
-Version:	4.69
+Version:	4.70
 Release:	1
 License:	Free
 Vendor:		Vic Abell <abe@purdue.edu>
 Group:		Applications/System
-Source0:	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}.tar.gz
-# Source0-md5:	d13e98fc85806424e371efde71f1e186
+Source0:	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}.tar.bz2
+# Source0-md5:	605c0aa8591adaf05c47bf1b846c6703
 Patch0:		%{name}-linux-ipv6mapped.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
