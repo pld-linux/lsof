@@ -1,7 +1,7 @@
 Summary:	Lists files open by processes
 Summary(pl):	Program do ¶ledzenia wszystkich procesów w systemie
 Name:		lsof
-Version:	4.43
+Version:	4.45
 Release:	1
 Copyright:	Free
 Group:		Utilities/System
@@ -26,7 +26,6 @@ administratora systemu Unix.
 tar xf %{name}_%{version}.tar
 
 %build
-rm -rf $RPM_BUILD_ROOT
 cd %{name}_%{version}
 
 ./Configure -n linux
@@ -36,14 +35,16 @@ make DEBUG="$RPM_OPT_FLAGS"
 rm -rf $RPM_BUILD_ROOT
 
 %install
+rm -rf $RPM_BUILD_ROOT
+
 cd %{name}_%{version}
 
-install -d $RPM_BUILD_ROOT%{_prefix}/{sbin,share/man/man8}
+install -d	$RPM_BUILD_ROOT%{_prefix}/{sbin,share/man/man8}
 
-install -s lsof $RPM_BUILD_ROOT%{_sbindir}
-install lsof.8 $RPM_BUILD_ROOT%{_mandir}/man8
+install -s lsof	$RPM_BUILD_ROOT%{_sbindir}
+install lsof.8	$RPM_BUILD_ROOT%{_mandir}/man8
 
-gzip -9fn $RPM_BUILD_ROOT%{_mandir}/man8/* 00*
+gzip -9fn	$RPM_BUILD_ROOT%{_mandir}/man8/* 00*
 
 %files
 %defattr(644,root,root,755)
