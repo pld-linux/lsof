@@ -22,8 +22,8 @@ uruchomine w systemie. Program ten jest bardzo pomocnym narzêdziem dla
 administratora systemu Unix.
 
 %prep
-%setup -c -n %{name}
-tar xvf %{name}_%{version}.tar
+%setup -c -q -n %{name}
+tar xf %{name}_%{version}.tar
 
 %build
 rm -rf $RPM_BUILD_ROOT
