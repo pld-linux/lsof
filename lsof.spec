@@ -9,7 +9,7 @@ Group(pl):	Narzêdzia/System
 Vendor:		Vic Abell <abe@purdue.edu>
 Source:		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}_W.tar.gz
 Patch:		lsof-linux-ipv6mapped.patch
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Lsof's name stands for LiSt Open Files, and it does just that. It lists
