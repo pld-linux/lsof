@@ -5,7 +5,7 @@ Summary(pt_BR):	Lista os arquivos abertos pelos processos que estЦo rodando
 Summary(ru):	Показывает открытые процессами файлы
 Summary(uk):	Показу╓ в╕дкрит╕ процесами файли
 Name:		lsof
-Version:	4.65
+Version:	4.66
 Release:	1
 License:	Free
 Group:		Applications/System
