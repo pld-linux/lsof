@@ -28,7 +28,7 @@ UNIX.
 
 %description -l pl
 Lsof (LiSt Open Files) ¶ledzi wszystkie procesy jakie s± w danej
-chwili uruchomine w systemie. Program ten jest bardzo pomocnym
+chwili uruchomione w systemie. Program ten jest bardzo pomocnym
 narzêdziem dla administratora systemu Unix.
 
 %description -l pt_BR
