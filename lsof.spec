@@ -1,25 +1,25 @@
 Summary:	Lists files open by processes
 Summary(pl):	Program do ¶ledzenia wszystkich procesów w systemie
 Name:		lsof
-Version:	4.48
-Release:	1
+Version:	4.49
+Release:	2
 Copyright:	Free
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
 Vendor:		Vic Abell <abe@purdue.edu>
-Source:		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}_W.tar.gz
-Patch:		lsof-linux-ipv6mapped.patch
+Source0:	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}_W.tar.gz
+Patch0:		lsof-linux-ipv6mapped.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Lsof's name stands for LiSt Open Files, and it does just that. It lists
-information about files that are open by the processes running on a UNIX
-system.
+Lsof's name stands for LiSt Open Files, and it does just that. It
+lists information about files that are open by the processes running
+on a UNIX system.
 
 %description -l pl
-Lsof (LiSt Open Files) ¶ledzi wszystkie procesy jakie s± w danej chwili
-uruchomine w systemie. Program ten jest bardzo pomocnym narzêdziem dla
-administratora systemu Unix.
+Lsof (LiSt Open Files) ¶ledzi wszystkie procesy jakie s± w danej
+chwili uruchomine w systemie. Program ten jest bardzo pomocnym
+narzêdziem dla administratora systemu Unix.
 
 %prep
 %setup -c -q -n %{name}
@@ -42,7 +42,7 @@ install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
 install -s lsof	$RPM_BUILD_ROOT%{_sbindir}
 install lsof.8 $RPM_BUILD_ROOT%{_mandir}/man8
 
-gzip -9fn $RPM_BUILD_ROOT%{_mandir}/man8/* 00*
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man8/* 00*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
