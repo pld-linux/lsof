@@ -2,10 +2,11 @@ Summary:	Lists files open by processes
 Summary(pl):	Program do ¶ledzenia wszystkich procesów w systemie
 Name:		lsof
 Version:	4.51
-Release:	1
-Copyright:	Free
-Group:		Utilities/System
-Group(pl):	Narzêdzia/System
+Release:	2
+License:	Free
+Group:		Applications/System
+Group(de):	Applikationen/System
+Group(pl):	Aplikacje/System
 Vendor:		Vic Abell <abe@purdue.edu>
 Source0:	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}_W.tar.gz
 Patch0:		%{name}-linux-ipv6mapped.patch
@@ -30,19 +31,18 @@ tar xf %{name}_%{version}.tar
 cd %{name}_%{version}
 
 ./Configure -n linux
-%{__make} DEBUG="$RPM_OPT_FLAGS"
+%{__make} DEBUG="%{!debug:$RPM_OPT_FLAGS}{!debug:-O -g}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
 
 cd %{name}_%{version}
 
-install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
-
-install -s lsof	$RPM_BUILD_ROOT%{_sbindir}
+install lsof $RPM_BUILD_ROOT%{_sbindir}
 install lsof.8 $RPM_BUILD_ROOT%{_mandir}/man8
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man8/* 00*
+gzip -9nf 00*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
