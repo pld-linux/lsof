@@ -1,0 +1,25 @@
+diff -urN lsof_4.45.orig/dialects/linux/proc/dsock.c lsof_4.45/dialects/linux/proc/dsock.c
+--- lsof_4.45.orig/dialects/linux/proc/dsock.c	Fri Aug  6 14:41:52 1999
++++ lsof_4.45/dialects/linux/proc/dsock.c	Fri Aug  6 14:45:07 1999
+@@ -1571,13 +1571,17 @@
+ 	    Lf->inp_ty = 2;
+ 	    (void) sprintf(dev_ch, "%ld", (long)s->st_ino);
+ 	    enter_dev_ch(dev_ch);
+-	    if (!IN6_IS_ADDR_UNSPECIFIED(&tp6->faddr) || tp6->fport)
++	    if (!IN6_IS_ADDR_UNSPECIFIED(&tp6->faddr) || tp6->fport) {
+ 		fa = (unsigned char *)&tp6->faddr;
+-	    else
++		if (IN6_IS_ADDR_V4MAPPED(&tp6->faddr))
++		    Lf->type[3] = '4';
++	    } else
+ 		fa = (unsigned char *)NULL;
+-	    if (!IN6_IS_ADDR_UNSPECIFIED(&tp6->laddr) || tp6->lport)
++	    if (!IN6_IS_ADDR_UNSPECIFIED(&tp6->laddr) || tp6->lport) {
+ 		la = (unsigned char *)&tp6->laddr;
+-	    else
++		if (IN6_IS_ADDR_V4MAPPED(&tp6->laddr))
++		    Lf->type[3] = '4';
++	    } else
+ 		la = (unsigned char *)NULL;
+ 	    ent_inaddr(la, tp6->lport, fa, tp6->fport, AF_INET6);
+ 	    Lf->lts.type = tp6->proto;
