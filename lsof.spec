@@ -51,19 +51,3 @@ gzip -9fn $RPM_BUILD_ROOT%{_mandir}/man8/* 00*
 
 %attr(755,root,root) %{_sbindir}/lsof
 %{_mandir}/man8/*
-
-%changelog
-* Sun Sep 27 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-  [4.37-1d]
-- updated to 4.37,
-- build against PLD Tornado,
-- translation modified for pl,
-- build from root account -> needed to build /proc-based lsof
-- restricted files permissions,
-- macro %%{name} in Patch.
-
-* Mon Jun 29 1998 Maciej Lesniewski <nimir@kis.p.lodz.pl>
-  [4.34-1]
-- New version
-- Spec rewriten to use %{name} and %{version} macros
-- Removed old log enteries
