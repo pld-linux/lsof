@@ -37,7 +37,7 @@ rm -rf $RPM_BUILD_ROOT
 
 cd %{name}_%{version}
 
-install -d $RPM_BUILD_ROOT%{_sbindir},%{_mandir}/man8}
+install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
 
 install -s lsof	$RPM_BUILD_ROOT%{_sbindir}
 install lsof.8 $RPM_BUILD_ROOT%{_mandir}/man8
