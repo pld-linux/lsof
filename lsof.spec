@@ -5,7 +5,7 @@ Summary(pt_BR):	Lista os arquivos abertos pelos processos que estЦo rodando
 Summary(ru):	Показывает открытые процессами файлы
 Summary(uk):	Показу╓ в╕дкрит╕ процесами файли
 Name:		lsof
-Version:	4.64
+Version:	4.65
 Release:	1
 License:	Free
 Group:		Applications/System
@@ -48,7 +48,6 @@ Lsof - це скорочення в╕д LiSt Open Files. Саме це програма lsof ╕
 %setup -c -q
 cd %{name}_%{version}
 tar xf %{name}_%{version}_src.tar
-#%patch -p1
 
 %build
 cd %{name}_%{version}/%{name}_%{version}_src
