@@ -1,14 +1,13 @@
 Summary:	Lists files open by processes
 Summary(pl):	Program do ¶ledzenia wszystkich procesów w systemie
 Name:		lsof
-Version:	4.45
+Version:	4.48
 Release:	1
 Copyright:	Free
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
 Vendor:		Vic Abell <abe@purdue.edu>
-URL:		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof
-Source:		%{name}_%{version}_W.tar.gz
+Source:		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}_W.tar.gz
 Patch:		lsof-linux-ipv6mapped.patch
 Buildroot:	/tmp/%{name}-%{version}-root
 
@@ -25,7 +24,7 @@ administratora systemu Unix.
 %prep
 %setup -c -q -n %{name}
 tar xf %{name}_%{version}.tar
-%patch -p0
+#%patch -p1
 
 %build
 cd %{name}_%{version}
