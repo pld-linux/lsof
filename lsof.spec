@@ -5,14 +5,13 @@ Summary(pt_BR):	Lista os arquivos abertos pelos processos que estЦo rodando
 Summary(ru):	Показывает открытые процессами файлы
 Summary(uk):	Показу╓ в╕дкрит╕ процесами файли
 Name:		lsof
-Version:	4.72
+Version:	4.73
 Release:	1
 License:	Free
 Vendor:		Vic Abell <abe@purdue.edu>
 Group:		Applications/System
 Source0:	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}.tar.bz2
-# Source0-md5:	5cc6edeab12733c69bac8ed4246e25f2
-# Source0-size:	716577
+# Source0-md5:	21e820cf581ecddca26a2acf7282770c
 Patch0:		%{name}-linux-ipv6mapped.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,7 +46,7 @@ Lsof - це скорочення в╕д LiSt Open Files. Саме це програма lsof ╕
 робить - виводить ╕нформац╕ю про файли, в╕дкрит╕ працюючими процесами.
 
 %prep
-%setup -c -q
+%setup -q -c
 cd %{name}_%{version}
 tar xf %{name}_%{version}_src.tar
 
