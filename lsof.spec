@@ -9,6 +9,7 @@ Group(pl):	Narzêdzia/System
 Vendor:		Vic Abell <abe@purdue.edu>
 URL:		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof
 Source:		%{name}_%{version}_W.tar.gz
+Patch:		lsof-linux-ipv6mapped.patch
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -24,6 +25,7 @@ administratora systemu Unix.
 %prep
 %setup -c -q -n %{name}
 tar xf %{name}_%{version}.tar
+%patch -p0
 
 %build
 cd %{name}_%{version}
