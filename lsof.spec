@@ -30,7 +30,7 @@ tar xf %{name}_%{version}.tar
 cd %{name}_%{version}
 
 ./Configure -n linux
-make DEBUG="$RPM_OPT_FLAGS"
+%{__make} DEBUG="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
