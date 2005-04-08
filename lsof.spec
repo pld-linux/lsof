@@ -13,6 +13,7 @@ Group:		Applications/System
 Source0:	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}.tar.bz2
 # Source0-md5:	f3259008d6cca746da6bb48278a56e59
 Patch0:		%{name}-linux-ipv6mapped.patch
+URL:		http://freshmeat.net/projects/lsof/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
