@@ -1,9 +1,9 @@
 Summary:	Lists files open by processes
-Summary(es):	Lista los archivos abiertos por los procesos que estАn en ejecuciСn
-Summary(pl):	Program do ╤ledzenia wszystkich procesСw w systemie
-Summary(pt_BR):	Lista os arquivos abertos pelos processos que estЦo rodando
-Summary(ru):	Показывает открытые процессами файлы
-Summary(uk):	Показу╓ в╕дкрит╕ процесами файли
+Summary(es.UTF-8):   Lista los archivos abiertos por los procesos que estц║n en ejecuciцЁn
+Summary(pl.UTF-8):   Program do е⌡ledzenia wszystkich procesцЁw w systemie
+Summary(pt_BR.UTF-8):   Lista os arquivos abertos pelos processos que estцёo rodando
+Summary(ru.UTF-8):   п÷п╬п╨п╟п╥я▀п╡п╟п╣я┌ п╬я┌п╨я─я▀я┌я▀п╣ п©я─п╬я├п╣я│я│п╟п╪п╦ я└п╟п╧п╩я▀
+Summary(uk.UTF-8):   п÷п╬п╨п╟п╥я┐я■ п╡я√п╢п╨я─п╦я┌я√ п©я─п╬я├п╣я│п╟п╪п╦ я└п╟п╧п╩п╦
 Name:		lsof
 Version:	4.77
 Release:	1
@@ -21,30 +21,30 @@ Lsof's name stands for LiSt Open Files, and it does just that. It
 lists information about files that are open by the processes running
 on a UNIX system.
 
-%description -l es
+%description -l es.UTF-8
 El nombre lsof significa LiSt Open Files, y lo que hace es: lista los
-archivos abiertos. Hace una relaciСn, con informaciСn variada, sobre
-los archivos abiertos por los procesos en ejecuciСn en un sistema
+archivos abiertos. Hace una relaciцЁn, con informaciцЁn variada, sobre
+los archivos abiertos por los procesos en ejecuciцЁn en un sistema
 UNIX.
 
-%description -l pl
-Lsof (LiSt Open Files) ╤ledzi wszystkie procesy jakie s╠ w danej
+%description -l pl.UTF-8
+Lsof (LiSt Open Files) е⌡ledzi wszystkie procesy jakie sд┘ w danej
 chwili uruchomione w systemie. Program ten jest bardzo pomocnym
-narzЙdziem dla administratora systemu Unix.
+narzд≥dziem dla administratora systemu Unix.
 
-%description -l pt_BR
+%description -l pt_BR.UTF-8
 O nome lsof significa LiSt Open Files, e faz isto: lista os arquivos
-abertos. Ele lista vАrias informaГУes sobre os arquivos abertos pelos
-processos que estЦo rodando em um sistema UNIX.
+abertos. Ele lista vц║rias informaц╖ц╣es sobre os arquivos abertos pelos
+processos que estцёo rodando em um sistema UNIX.
 
-%description -l ru
-Lsof - это сокращение от LiSt Open Files. Именно это программа lsof и
-делает - выводит информацию о файлах, открытых процессами, работающими
-в системе.
+%description -l ru.UTF-8
+Lsof - я█я┌п╬ я│п╬п╨я─п╟я┴п╣п╫п╦п╣ п╬я┌ LiSt Open Files. п≤п╪п╣п╫п╫п╬ я█я┌п╬ п©я─п╬пЁя─п╟п╪п╪п╟ lsof п╦
+п╢п╣п╩п╟п╣я┌ - п╡я▀п╡п╬п╢п╦я┌ п╦п╫я└п╬я─п╪п╟я├п╦я▌ п╬ я└п╟п╧п╩п╟я┘, п╬я┌п╨я─я▀я┌я▀я┘ п©я─п╬я├п╣я│я│п╟п╪п╦, я─п╟п╠п╬я┌п╟я▌я┴п╦п╪п╦
+п╡ я│п╦я│я┌п╣п╪п╣.
 
-%description -l uk
-Lsof - це скорочення в╕д LiSt Open Files. Саме це програма lsof ╕
-робить - виводить ╕нформац╕ю про файли, в╕дкрит╕ працюючими процесами.
+%description -l uk.UTF-8
+Lsof - я├п╣ я│п╨п╬я─п╬я┤п╣п╫п╫я▐ п╡я√п╢ LiSt Open Files. п║п╟п╪п╣ я├п╣ п©я─п╬пЁя─п╟п╪п╟ lsof я√
+я─п╬п╠п╦я┌я▄ - п╡п╦п╡п╬п╢п╦я┌я▄ я√п╫я└п╬я─п╪п╟я├я√я▌ п©я─п╬ я└п╟п╧п╩п╦, п╡я√п╢п╨я─п╦я┌я√ п©я─п╟я├я▌я▌я┤п╦п╪п╦ п©я─п╬я├п╣я│п╟п╪п╦.
 
 %prep
 %setup -q -c
