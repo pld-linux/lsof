@@ -1,9 +1,9 @@
 Summary:	Lists files open by processes
-Summary(es.UTF-8):   Lista los archivos abiertos por los procesos que están en ejecución
-Summary(pl.UTF-8):   Program do śledzenia wszystkich procesów w systemie
-Summary(pt_BR.UTF-8):   Lista os arquivos abertos pelos processos que estão rodando
-Summary(ru.UTF-8):   Показывает открытые процессами файлы
-Summary(uk.UTF-8):   Показує відкриті процесами файли
+Summary(es.UTF-8):	Lista los archivos abiertos por los procesos que están en ejecución
+Summary(pl.UTF-8):	Program do śledzenia wszystkich procesów w systemie
+Summary(pt_BR.UTF-8):	Lista os arquivos abertos pelos processos que estão rodando
+Summary(ru.UTF-8):	Показывает открытые процессами файлы
+Summary(uk.UTF-8):	Показує відкриті процесами файли
 Name:		lsof
 Version:	4.77
 Release:	1
