@@ -6,7 +6,7 @@ Summary(ru.UTF-8):	Показывает открытые процессами ф
 Summary(uk.UTF-8):	Показує відкриті процесами файли
 Name:		lsof
 Version:	4.81
-Release:	1
+Release:	2
 License:	Free
 Group:		Applications/System
 Source0:	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}.tar.bz2
@@ -61,11 +61,11 @@ LSOF_CC="%{__cc}"; export LSOF_CC
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man8}
 
 cd %{name}_%{version}/%{name}_%{version}_src
 
-install lsof $RPM_BUILD_ROOT%{_sbindir}
+install lsof $RPM_BUILD_ROOT%{_bindir}
 install lsof.8 $RPM_BUILD_ROOT%{_mandir}/man8
 
 %clean
@@ -74,5 +74,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc %{name}_%{version}/{00*,README.*,RELEASE*} %{name}_%{version}/%{name}_%{version}_src/00*
-%attr(755,root,root) %{_sbindir}/lsof
+%attr(755,root,root) %{_bindir}/lsof
 %{_mandir}/man8/*
