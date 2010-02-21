@@ -5,12 +5,12 @@ Summary(pt_BR.UTF-8):	Lista os arquivos abertos pelos processos que estão rodan
 Summary(ru.UTF-8):	Показывает открытые процессами файлы
 Summary(uk.UTF-8):	Показує відкриті процесами файли
 Name:		lsof
-Version:	4.82
+Version:	4.83
 Release:	1
 License:	Free
 Group:		Applications/System
 Source0:	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}.tar.bz2
-# Source0-md5:	5518a0c16fc937523b3d1a946cf59e5b
+# Source0-md5:	8f731a6251b8c0143d585df0d5ca779e
 Patch0:		%{name}-linux-ipv6mapped.patch
 URL:		http://freshmeat.net/projects/lsof/
 BuildRequires:	libselinux-devel
@@ -57,7 +57,7 @@ cd %{name}_%{version}/%{name}_%{version}_src
 LSOF_CC="%{__cc}"; export LSOF_CC
 ./Configure -n linux
 %{__make} \
-	DEBUG="%{rpmcflags}"
+	DEBUG="%{rpmcppflags} %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
