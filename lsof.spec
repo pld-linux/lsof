@@ -5,12 +5,12 @@ Summary(pt_BR.UTF-8):	Lista os arquivos abertos pelos processos que estão rodan
 Summary(ru.UTF-8):	Показывает открытые процессами файлы
 Summary(uk.UTF-8):	Показує відкриті процесами файли
 Name:		lsof
-Version:	4.86
+Version:	4.87
 Release:	1
 License:	Free
 Group:		Applications/System
 Source0:	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}.tar.bz2
-# Source0-md5:	9f1cda41f35add068c7b81f873fa56b5
+# Source0-md5:	80e2a76d0e05826db910ec88e631296c
 Patch0:		%{name}-linux-ipv6mapped.patch
 URL:		http://people.freebsd.org/~abe/
 BuildRequires:	libselinux-devel
