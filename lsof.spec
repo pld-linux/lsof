@@ -6,7 +6,7 @@ Summary(ru.UTF-8):	Показывает открытые процессами ф
 Summary(uk.UTF-8):	Показує відкриті процесами файли
 Name:		lsof
 Version:	4.87
-Release:	1
+Release:	2
 License:	Free
 Group:		Applications/System
 Source0:	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}.tar.bz2
