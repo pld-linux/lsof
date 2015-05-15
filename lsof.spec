@@ -11,7 +11,7 @@ License:	Free
 Group:		Applications/System
 Source0:	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/%{name}_%{version}.tar.bz2
 # Source0-md5:	1b29c10db4aa88afcaeeaabeef6790db
-Patch0:		%{name}-linux-ipv6mapped.patch
+Patch0:		lsof-4.88-pipe-files.patch
 URL:		http://people.freebsd.org/~abe/
 BuildRequires:	libselinux-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -50,6 +50,8 @@ Lsof - це скорочення від LiSt Open Files. Саме це прог�
 %setup -q -c
 cd %{name}_%{version}
 tar xf %{name}_%{version}_src.tar
+cd %{name}_%{version}_src
+%patch0 -p1
 
 %build
 cd %{name}_%{version}/%{name}_%{version}_src
