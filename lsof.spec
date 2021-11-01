@@ -13,6 +13,7 @@ Source0:	https://github.com/lsof-org/lsof/releases/download/%{version}/lsof_%{ve
 # Source0-md5:	2a007f86fb0207fbce3e9d7542e1041c
 URL:		http://people.freebsd.org/~abe/
 BuildRequires:	libselinux-devel
+BuildRequires:	libtirpc-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
