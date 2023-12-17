@@ -5,13 +5,13 @@ Summary(pt_BR.UTF-8):	Lista os arquivos abertos pelos processos que estão rodan
 Summary(ru.UTF-8):	Показывает открытые процессами файлы
 Summary(uk.UTF-8):	Показує відкриті процесами файли
 Name:		lsof
-Version:	4.95.0
+Version:	4.99.2
 Release:	1
 License:	Free
 Group:		Applications/System
-Source0:	https://github.com/lsof-org/lsof/releases/download/%{version}/lsof_%{version}.linux.tar.bz2
-# Source0-md5:	670010707104b1b1fc4cabae974465a6
-URL:		http://people.freebsd.org/~abe/
+Source0:	https://github.com/lsof-org/lsof/archive/%{version}/lsof-%{version}.tar.gz
+# Source0-md5:	bb9cd45716d5b6e3043d49fcd20de3b0
+URL:		https://people.freebsd.org/~abe/
 BuildRequires:	libselinux-devel
 BuildRequires:	libtirpc-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -47,7 +47,7 @@ Lsof - це скорочення від LiSt Open Files. Саме це прог�
 робить - виводить інформацію про файли, відкриті працюючими процесами.
 
 %prep
-%setup -q -n %{name}_%{version}.linux
+%setup -q
 
 %build
 LSOF_CC="%{__cc}"; export LSOF_CC
@@ -55,18 +55,21 @@ LSOF_CC="%{__cc}"; export LSOF_CC
 %{__make} \
 	DEBUG="%{rpmcppflags} %{rpmcflags}"
 
+# see Makefile.am
+soelim < Lsof.8 > lsof.man
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man8}
 
 install lsof $RPM_BUILD_ROOT%{_bindir}
-install lsof.8 $RPM_BUILD_ROOT%{_mandir}/man8
+cp -p lsof.man $RPM_BUILD_ROOT%{_mandir}/man8/lsof.8
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {00*,README.*}
+%doc 00* COPYING ChangeLog README.md
 %attr(755,root,root) %{_bindir}/lsof
 %{_mandir}/man8/lsof.8*
