@@ -5,12 +5,12 @@ Summary(pt_BR.UTF-8):	Lista os arquivos abertos pelos processos que estão rodan
 Summary(ru.UTF-8):	Показывает открытые процессами файлы
 Summary(uk.UTF-8):	Показує відкриті процесами файли
 Name:		lsof
-Version:	4.99.2
+Version:	4.99.7
 Release:	1
 License:	Free
 Group:		Applications/System
 Source0:	https://github.com/lsof-org/lsof/archive/%{version}/lsof-%{version}.tar.gz
-# Source0-md5:	bb9cd45716d5b6e3043d49fcd20de3b0
+# Source0-md5:	6d2dd9e9986b016ec79f3698353230bc
 URL:		https://people.freebsd.org/~abe/
 BuildRequires:	libselinux-devel
 BuildRequires:	libtirpc-devel
