@@ -11,6 +11,8 @@ License:	Free
 Group:		Applications/System
 Source0:	https://github.com/lsof-org/lsof/archive/%{version}/lsof-%{version}.tar.gz
 # Source0-md5:	6d2dd9e9986b016ec79f3698353230bc
+# https://github.com/lsof-org/lsof/commit/abd5ba48bc03e07d0a4b186e3486b44d3982d652
+Patch0:		%{name}-state-spec-null.patch
 URL:		https://people.freebsd.org/~abe/
 BuildRequires:	libselinux-devel
 BuildRequires:	libtirpc-devel
@@ -48,9 +50,11 @@ Lsof - це скорочення від LiSt Open Files. Саме це прог�
 
 %prep
 %setup -q
+%patch -P0 -p1
 
 %build
 LSOF_CC="%{__cc}"; export LSOF_CC
+LSOF_CFGL="%{rpmldflags}"; export LSOF_CFGL
 ./Configure -n linux
 %{__make} \
 	DEBUG="%{rpmcppflags} %{rpmcflags}"

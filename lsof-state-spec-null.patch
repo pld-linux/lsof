@@ -1,0 +1,36 @@
+From abd5ba48bc03e07d0a4b186e3486b44d3982d652 Mon Sep 17 00:00:00 2001
+From: Jiajie Chen <c@jia.je>
+Date: Fri, 24 Jul 2026 08:46:34 +0800
+Subject: [PATCH] fix: segfault in -s UDP:ESTABLISHED due to NULL UdpSt entries
+
+UdpSt[] and TcpSt[] arrays may contain NULL entries when state numbers
+don't start at 0. The matching loop in enter_state_spec passed entries
+directly to strcasecmp without NULL-checking, causing a segfault.
+
+Add NULL guards before strcasecmp calls.
+---
+ src/arg.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/arg.c b/src/arg.c
+index 9560f42a..750ab690 100644
+--- a/src/arg.c
++++ b/src/arg.c
+@@ -1861,7 +1861,7 @@ int enter_state_spec(struct lsof_context *ctx,
+         if (tx) {
+             if (UdpSt) {
+                 for (i = 0; i < UdpNstates; i++) {
+-                    if (!strcasecmp(ns, UdpSt[i])) {
++                    if (UdpSt[i] && !strcasecmp(ns, UdpSt[i])) {
+                         f = 1;
+                         break;
+                     }
+@@ -1870,7 +1870,7 @@ int enter_state_spec(struct lsof_context *ctx,
+         } else {
+             if (TcpSt) {
+                 for (i = 0; i < TcpNstates; i++) {
+-                    if (!strcasecmp(ns, TcpSt[i])) {
++                    if (TcpSt[i] && !strcasecmp(ns, TcpSt[i])) {
+                         f = 1;
+                         break;
+                     }
